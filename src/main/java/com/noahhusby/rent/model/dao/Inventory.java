@@ -15,9 +15,11 @@ import java.time.LocalDateTime;
 public class Inventory implements Serializable {
     @Id
     private InventoryId inventoryId;
+    @Column(name = "quantity", nullable = false)
+    private int quantity;
     @LastModifiedDate
     @Column(name = "updated_at", nullable = false)
-    private LocalDateTime lastUpatedAt;
+    private LocalDateTime lastUpdatedAt;
 
     @Embeddable
     @Data

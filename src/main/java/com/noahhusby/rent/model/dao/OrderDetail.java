@@ -17,9 +17,6 @@ public class OrderDetail {
     @Column(name = "quantity", nullable = false)
     private int quantity;
 
-    @Column(name = "price", nullable = false)
-    private double price;
-
     @Embeddable
     @Data
     public static class OrderDetailId implements Serializable {
