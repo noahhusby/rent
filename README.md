@@ -10,18 +10,18 @@
   <br/><br/>
 </p>
 
-[![](https://github.com/noahhusby/rent/actions/workflows/build.yml/badge.svg)](https://github.com/noahhusby/rent/actions/workflows/build.yml)
 [![](https://img.shields.io/github/license/noahhusby/rent)](https://github.com/noahhusby/rent/blob/main/LICENSE)
 </div>
 
 ## Table of Contents
-- [ER Model]()
-- [Relational Schema]()
-- [Sample Data]()
-  - [As SQL File]()
+- [For the professor / TA](https://github.com/noahhusby/rent/tree/main#for-the-professor--ta)
+- [ER Model](https://github.com/noahhusby/rent/blob/main/er_diagram.png)
+- [Relational Schema](https://github.com/noahhusby/rent/blob/main/relational_schema.pdf)
+- [Sample Data](https://github.com/noahhusby/rent/tree/main#sql-scripts)
+  - [As SQL File](https://github.com/noahhusby/rent/blob/main/sample_data.sql)
 - Application
-  - [Backend (/src)]()
-  - [Frontend (/web)]()
+  - [Backend (/src)](https://github.com/noahhusby/rent/tree/main/src)
+  - [Frontend (/web)](https://github.com/noahhusby/rent/tree/main/web)
 - [Video Walkthrough](https://youtu.be/dTSDwB6lwqI)
 
 ## For the professor / TA
