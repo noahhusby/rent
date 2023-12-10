@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Product</title>
+	<link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-4.5.1.min.css" />
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .vf-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .vf-form-group {
+            margin-bottom: 20px;
+        }
+
+        .vf-form-label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .vf-form-input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .vf-form-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+	<nav class="p-breadcrumbs" aria-label="Breadcrumbs">
+	  <ol class="p-breadcrumbs__items">
+		  <li class="p-breadcrumbs__item"><a href="index.html">Overview</a></li>
+		  <li class="p-breadcrumbs__item">Create Product</li>
+	  </ol>
+	</nav>
+	
+    <h1>Create New Product</h1>
+
+	<form id="product_form">
+	  <label for="title">Title</label>
+	  <input type="text" id="title" name="title" placeholder="Cars II">
+	  <label for="publisher">Publisher</label>
+	  <input type="text" id="publisher" name="publisher" placeholder="Pixar">
+	  <label for="releaseDate">Release Date</label>
+	  <input type="date" id="releaseDate" name="releaseDate" placeholder="2023-12-10">
+	  <button type="submit" name="submit" onclick="createProduct();">Submit</button>
+	</form>
+
+    <script>
+
+        function createProduct(e) {
+			e.preventDefault();
+            const form = document.getElementById('product_form');
+            const formData = new FormData(form);
+            fetch('https://c805-136-30-19-195.ngrok-free.app/product', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Product created successfully:', data);
+				window.location.replace("index.html");
+                // Additional logic if needed
+            })
+            .catch(error => console.error('Error creating customer:', error));
+        }
+		document.getElementById("product_form").addEventListener("submit", createProduct);
+		
+		
+    </script>
+</body>
+</html>

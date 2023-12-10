@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Customer</title>
+	<link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-4.5.1.min.css" />
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .vf-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .vf-form-group {
+            margin-bottom: 20px;
+        }
+
+        .vf-form-label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .vf-form-input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .vf-form-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Overview</h1>
+	<div class="p-tabs">
+	  <div class="p-tabs__list" role="tablist" aria-label="Rental Store">
+		<div class="p-tabs__item" href="#test">
+		  <button class="p-tabs__link" role="tab" aria-selected="true" aria-controls="olm-tab" id="olm">Customers</button>
+		</div>
+		<div class="p-tabs__item" href="#testagin">
+		  <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="employees-tab" id="employees" tabindex="-1">Employees</button>
+		</div>
+		<div class="p-tabs__item">
+		  <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="locations-tab" id="locations" tabindex="-1">Locations</button>
+		</div>
+		<div class="p-tabs__item">
+		  <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="products-tab" id="products" tabindex="-1">Products</button>
+		</div>
+		<div class="p-tabs__item">
+		  <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="rentals-tab" id="rentals" tabindex="-1">Rentals</button>
+		</div>
+
+	  </div>
+
+	  <div tabindex="0" role="tabpanel" id="olm-tab" aria-labelledby="olm" href="#bacon">
+		  <table aria-label="Customers" id="customer_table">
+			  <thead>
+				<tr>
+				  <th>ID</th>
+				  <th>Name</th>
+				  <th class="u-align--right">Email</th>
+				  <th class="u-align--right">Address</th>
+				  <th class="u-align--right">Actions</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  </tbody>
+			</table>
+			<button onclick="location.href = 'create_user.html';" id="addCustomer" class="p-button--positive" aria-controls="modale">Add Customer</button>
+	  </div>
+
+	  <div tabindex="0" role="tabpanel" id="employees-tab" aria-labelledby="employees" hidden="hidden">
+		  <table aria-label="Employees" id="employee_table">
+			  <thead>
+				<tr>
+				  <th>ID</th>
+				  <th>Name</th>
+				  <th class="u-align--right">Email</th>
+				  <th class="u-align--right">Address</th>
+				  <th class="u-align--right">Phone Number</th>
+				  <th class="u-align--right">Actions</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  </tbody>
+			</table>
+			<button onclick="location.href = 'create_employee.html';" id="addEmployee" class="p-button--positive" aria-controls="modale">Add Employee</button>
+	  </div>
+	  
+	  <div tabindex="0" role="tabpanel" id="locations-tab" aria-labelledby="locations" hidden="hidden">
+		  <table aria-label="Locations" id="location_table">
+			  <thead>
+				<tr>
+				  <th>ID</th>
+				  <th>Manager</th>
+				  <th class="u-align--right">Address</th>
+				  <th class="u-align--right">Actions</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  </tbody>
+			</table>
+			<button onclick="location.href = 'create_location.html';" id="addLocation" class="p-button--positive" aria-controls="modale">Add Location</button>
+	  </div>
+	  
+	  <div tabindex="0" role="tabpanel" id="products-tab" aria-labelledby="products" hidden="hidden">
+		  <table aria-label="Locations" id="product_table">
+			  <thead>
+				<tr>
+				  <th>ID</th>
+				  <th>Title</th>
+				  <th>Publisher</th>
+				  <th class="u-align--right">Release Date</th>
+				  <th class="u-align--right">Actions</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  </tbody>
+			</table>
+			<button onclick="location.href = 'create_product.html';" id="addProduct" class="p-button--positive" aria-controls="modale">Add Product</button>
+	  </div>
+	  
+	  <div tabindex="0" role="tabpanel" id="rentals-tab" aria-labelledby="rentals" hidden="hidden">
+	  <table aria-label="Locations" id="rental_table">
+		  <thead>
+			<tr>
+			  <th>ID</th>
+			  <th>Customer</th>
+			  <th>Product</th>
+			  <th>Cost</th>
+			  <th>Rental Date</th>
+			  <th>Due Date</th>
+			  <th class="p-table__cell--icon-placeholder">Return</th>
+			  <th class="u-align--right">Actions</th>
+			</tr>
+		  </thead>
+		  <tbody>
+		  </tbody>
+		</table>
+		<button onclick="location.href = 'create_rental.html';" id="addRental" class="p-button--positive" aria-controls="modale">Rent a Product</button>
+	  </div>
+
+	  <div tabindex="0" role="tabpanel" id="charmhub-tab" aria-labelledby="charmhub" hidden="hidden">
+		<p>A repository for charms - from Observability to Data to Identity and more.</p>
+	  </div>
+	</div>
+</body>
+</html>

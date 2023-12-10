@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Customer</title>
+	<link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-4.5.1.min.css" />
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .vf-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .vf-form-group {
+            margin-bottom: 20px;
+        }
+
+        .vf-form-label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .vf-form-input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .vf-form-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+	<nav class="p-breadcrumbs" aria-label="Breadcrumbs">
+	  <ol class="p-breadcrumbs__items">
+		  <li class="p-breadcrumbs__item"><a href="index.html">Overview</a></li>
+		  <li class="p-breadcrumbs__item">Create Customer</li>
+	  </ol>
+	</nav>
+	
+    <h1>Create New Customer</h1>
+
+	<form id="customer_form">
+	  <label for="name">Name</label>
+	  <input type="text" id="name" name="name" placeholder="Robert A. Smith">
+	  <label for="email">Email address</label>
+	  <input type="email" id="email" name="email" placeholder="example@hawk.iit.edu" autocomplete="email">
+	  <label for="address">Address</label>
+	  <input type="text" id="address" name="address" placeholder="1234 S. 3rd St.">
+	  <button type="submit" name="submit" onclick="createCustomer();">Submit</button>
+	</form>
+
+    <script>
+
+        function createCustomer(e) {
+			e.preventDefault();
+            const form = document.getElementById('customer_form');
+            const formData = new FormData(form);
+            fetch('https://c805-136-30-19-195.ngrok-free.app/customer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Customer created successfully:', data);
+				window.location.replace("index.html");
+                // Additional logic if needed
+            })
+            .catch(error => console.error('Error creating customer:', error));
+        }
+		document.getElementById("customer_form").addEventListener("submit", createCustomer);
+		
+		
+    </script>
+</body>
+</html>
