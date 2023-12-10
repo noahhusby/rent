@@ -13,8 +13,15 @@
 [![](https://img.shields.io/github/license/noahhusby/rent)](https://github.com/noahhusby/rent/blob/main/LICENSE)
 </div>
 
+## Contributing Members
+- Noah Husby (A20481720)
+- Mohammed Azhar Khan (A20493536)
+- Justin Luu (A20462898)
+- Connor Houchin (A10518738)
+
 ## Table of Contents
 - [For the professor / TA](https://github.com/noahhusby/rent/tree/main#for-the-professor--ta)
+- [Project Overview](https://github.com/noahhusby/rent/blob/main/425_prof.pdf)
 - [ER Model](https://github.com/noahhusby/rent/blob/main/er_diagram.png)
 - [Relational Schema](https://github.com/noahhusby/rent/blob/main/relational_schema.pdf)
 - [Sample Data](https://github.com/noahhusby/rent/tree/main#sql-scripts)
